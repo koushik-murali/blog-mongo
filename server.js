@@ -12,8 +12,7 @@ app.set('view engine', 'ejs')
 app.get('/', async (req, res) =>{
     try{
         const articles = await article.find()
-        const websiteImages = await images.find()
-        res.render('home', { Pictures: websiteImages, articles: articles})
+        res.send({ articles: articles})
     } catch(e)
     {
         console.log(e)
