@@ -5,6 +5,9 @@ const images = require('./pictures')
 const dotenv = require('dotenv');
 const Mongoose = require('mongoose');
 dotenv.config();
+const cors = require('cors')
+
+app.use(cors())
 Mongoose.connect(process.env.CONSTRING, {useNewUrlParser: true, useUnifiedTopology: true,})
 
 app.set('view engine', 'ejs')
